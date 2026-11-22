@@ -1,0 +1,23 @@
+{
+  "main_commit": "7d3314549d1461b17615cc1df324660e6c2b67f6",
+  "probe_commit": "4d5ce353ef78979e07d289e2a0d0e591d184a3d6",
+  "rows": 16,
+  "verdicts": {
+    "dpo": [
+      "under-read",
+      "step-oom"
+    ],
+    "kto": [
+      "under-read",
+      "step-oom"
+    ],
+    "orpo": [
+      "under-read",
+      "step-oom"
+    ],
+    "simpo": [
+      "under-read",
+      "step-oom"
+    ]
+  }
+}

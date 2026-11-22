@@ -1,0 +1,155 @@
+{
+  "available_bytes": 7551844352,
+  "baseline_allocated_bytes": 335300096,
+  "baseline_reserved_bytes": 339738624,
+  "batch_size": 1,
+  "created_utc": "2026-11-19T03:22:37.033747+00:00",
+  "forward_shapes": [
+    [
+      2,
+      2048
+    ],
+    [
+      2,
+      2048
+    ]
+  ],
+  "hardware": {
+    "compute_capability": "8.6",
+    "driver_version": "616.56",
+    "name": "NVIDIA GeForce RTX 3050 Laptop GPU",
+    "torch_cuda": "13.2",
+    "total_vram_bytes": 8589410304
+  },
+  "main_commit": "7d3314549d1461b17615cc1df324660e6c2b67f6",
+  "measurement_free_bytes_before": 7182745600,
+  "measurement_total_bytes": 8589410304,
+  "measurement_tree": "223d4d507b102c97b5526869b956c453cddce467",
+  "mode": "step",
+  "model_id": "Qwen/Qwen2.5-0.5B-Instruct",
+  "model_path": "C:\\Users\\heatsin\\.cache\\huggingface\\hub\\models--Qwen--Qwen2.5-0.5B-Instruct\\snapshots\\7ae557604adf67be50417f59c2c2f167def9a775",
+  "model_revision": "7ae557604adf67be50417f59c2c2f167def9a775",
+  "nvidia_smi_errors": [],
+  "nvidia_smi_samples": [
+    {
+      "memory_free_mib": 7618,
+      "memory_used_mib": 425,
+      "temperature_c": 51,
+      "timestamp": "2026/11/19 04:22:59.123",
+      "utilization_percent": 0
+    },
+    {
+      "memory_free_mib": 7598,
+      "memory_used_mib": 445,
+      "temperature_c": 51,
+      "timestamp": "2026/11/19 04:22:59.186",
+      "utilization_percent": 0
+    },
+    {
+      "memory_free_mib": 1342,
+      "memory_used_mib": 6701,
+      "temperature_c": 51,
+      "timestamp": "2026/11/19 04:22:59.755",
+      "utilization_percent": 58
+    },
+    {
+      "memory_free_mib": 60,
+      "memory_used_mib": 7983,
+      "temperature_c": 60,
+      "timestamp": "2026/11/19 04:23:00.342",
+      "utilization_percent": 75
+    },
+    {
+      "memory_free_mib": 54,
+      "memory_used_mib": 7989,
+      "temperature_c": 56,
+      "timestamp": "2026/11/19 04:23:00.937",
+      "utilization_percent": 1
+    },
+    {
+      "memory_free_mib": 48,
+      "memory_used_mib": 7995,
+      "temperature_c": 56,
+      "timestamp": "2026/11/19 04:23:01.549",
+      "utilization_percent": 100
+    },
+    {
+      "memory_free_mib": 48,
+      "memory_used_mib": 7995,
+      "temperature_c": 56,
+      "timestamp": "2026/11/19 04:23:02.138",
+      "utilization_percent": 100
+    },
+    {
+      "memory_free_mib": 48,
+      "memory_used_mib": 7995,
+      "temperature_c": 56,
+      "timestamp": "2026/11/19 04:23:02.734",
+      "utilization_percent": 100
+    },
+    {
+      "memory_free_mib": 48,
+      "memory_used_mib": 7995,
+      "temperature_c": 56,
+      "timestamp": "2026/11/19 04:23:03.320",
+      "utilization_percent": 100
+    },
+    {
+      "memory_free_mib": 40,
+      "memory_used_mib": 8003,
+      "temperature_c": 60,
+      "timestamp": "2026/11/19 04:23:03.877",
+      "utilization_percent": 46
+    },
+    {
+      "memory_free_mib": 40,
+      "memory_used_mib": 8003,
+      "temperature_c": 57,
+      "timestamp": "2026/11/19 04:23:04.448",
+      "utilization_percent": 100
+    },
+    {
+      "memory_free_mib": 40,
+      "memory_used_mib": 8003,
+      "temperature_c": 58,
+      "timestamp": "2026/11/19 04:23:05.038",
+      "utilization_percent": 100
+    },
+    {
+      "memory_free_mib": 38,
+      "memory_used_mib": 8005,
+      "temperature_c": 60,
+      "timestamp": "2026/11/19 04:23:05.606",
+      "utilization_percent": 90
+    }
+  ],
+  "predicted_bytes": 9351115616,
+  "probe_commit": "4d5ce353ef78979e07d289e2a0d0e591d184a3d6",
+  "probe_peak_bytes": null,
+  "probe_seconds": null,
+  "real_step_peak_bytes": 11725740544,
+  "real_step_seconds": 6.995173799999975,
+  "realized_batch": {
+    "configured_batch_size": 1,
+    "fields": {
+      "input_ids": [
+        2,
+        2048
+      ]
+    }
+  },
+  "reserved_peak_bytes": 11901337600,
+  "schema_version": 1,
+  "sequence_length": 2048,
+  "status": "success",
+  "task": "dpo",
+  "verdict": "pending-paired-process-row",
+  "versions": {
+    "accelerate": "1.15.0",
+    "bitsandbytes": "0.50.2",
+    "peft": "0.21.2",
+    "torch": "2.15.0+cu132",
+    "transformers": "5.22.2",
+    "trl": "0.29.1"
+  }
+}

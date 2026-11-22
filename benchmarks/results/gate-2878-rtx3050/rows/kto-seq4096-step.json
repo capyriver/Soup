@@ -1,0 +1,66 @@
+{
+  "available_bytes": 7551844352,
+  "batch_size": 2,
+  "created_utc": "2026-11-19T03:41:52.567399+00:00",
+  "error": "CUDA out of memory. Tried to allocate 2.32 GiB. GPU 0 has a total capacity of 8.00 GiB of which 0 bytes is free. Including non-PyTorch memory, this process has 17179869184.00 GiB memory in use. Of the allocated memory 9.96 GiB is allocated by PyTorch, and 2.28 GiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://docs.pytorch.org/docs/stable/notes/cuda.html#optimizing-memory-usage-with-pytorch-cuda-alloc-conf)",
+  "error_type": "OutOfMemoryError",
+  "forward_shapes": [
+    [
+      2,
+      4096
+    ],
+    [
+      2,
+      4096
+    ]
+  ],
+  "hardware": {
+    "compute_capability": "8.6",
+    "driver_version": "616.56",
+    "name": "NVIDIA GeForce RTX 3050 Laptop GPU",
+    "torch_cuda": "13.2",
+    "total_vram_bytes": 8589410304
+  },
+  "main_commit": "7d3314549d1461b17615cc1df324660e6c2b67f6",
+  "measurement_free_bytes_before": null,
+  "measurement_total_bytes": null,
+  "measurement_tree": "223d4d507b102c97b5526869b956c453cddce467",
+  "mode": "step",
+  "model_id": "Qwen/Qwen2.5-0.5B-Instruct",
+  "model_path": "C:\\Users\\heatsin\\.cache\\huggingface\\hub\\models--Qwen--Qwen2.5-0.5B-Instruct\\snapshots\\7ae557604adf67be50417f59c2c2f167def9a775",
+  "model_revision": "7ae557604adf67be50417f59c2c2f167def9a775",
+  "nvidia_smi_errors": [],
+  "nvidia_smi_samples": [],
+  "predicted_bytes": 18334266208,
+  "probe_commit": "4d5ce353ef78979e07d289e2a0d0e591d184a3d6",
+  "probe_peak_bytes": null,
+  "probe_seconds": null,
+  "real_step_peak_bytes": null,
+  "realized_batch": {
+    "configured_batch_size": 2,
+    "fields": {
+      "KL_completion_input_ids": [
+        2,
+        4096
+      ],
+      "completion_input_ids": [
+        2,
+        4096
+      ]
+    }
+  },
+  "reserved_peak_bytes": null,
+  "schema_version": 1,
+  "sequence_length": 4096,
+  "status": "oom",
+  "task": "kto",
+  "traceback": " line 1069, in _compute_kl_logps\n    KL_logits = model(**KL_model_kwargs).logits\n                ~~~~~^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\heatsin\\Documents\\Codex\\2026-11-08\\devops-qa-backend-frontend-full-stack\\soup_source\\.venv\\Lib\\site-packages\\torch\\nn\\modules\\module.py\", line 1787, in _wrapped_call_impl\n    return self._call_impl(*args, **kwargs)\n           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\heatsin\\Documents\\Codex\\2026-11-08\\devops-qa-backend-frontend-full-stack\\soup_source\\.venv\\Lib\\site-packages\\torch\\nn\\modules\\module.py\", line 1893, in _call_impl\n    return inner()\n  File \"C:\\Users\\heatsin\\Documents\\Codex\\2026-11-08\\devops-qa-backend-frontend-full-stack\\soup_source\\.venv\\Lib\\site-packages\\torch\\nn\\modules\\module.py\", line 1841, in inner\n    result = forward_call(*args, **kwargs)\n  File \"C:\\Users\\heatsin\\Documents\\Codex\\2026-11-08\\devops-qa-backend-frontend-full-stack\\soup_source\\.venv\\Lib\\site-packages\\accelerate\\utils\\operations.py\", line 943, in forward\n    return model_forward(*args, **kwargs)\n  File \"C:\\Users\\heatsin\\Documents\\Codex\\2026-11-08\\devops-qa-backend-frontend-full-stack\\soup_source\\.venv\\Lib\\site-packages\\accelerate\\utils\\operations.py\", line 931, in __call__\n    return convert_to_fp32(self.model_forward(*args, **kwargs))\n                           ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\heatsin\\Documents\\Codex\\2026-11-08\\devops-qa-backend-frontend-full-stack\\soup_source\\.venv\\Lib\\site-packages\\torch\\amp\\autocast_mode.py\", line 44, in decorate_autocast\n    return func(*args, **kwargs)\n  File \"C:\\Users\\heatsin\\Documents\\Codex\\2026-11-08\\devops-qa-backend-frontend-full-stack\\soup_source\\.venv\\Lib\\site-packages\\peft\\peft_model.py\", line 2120, in forward\n    return self.base_model(\n           ~~~~~~~~~~~~~~~^\n        input_ids=input_ids,\n        ^^^^^^^^^^^^^^^^^^^^\n    ...<6 lines>...\n        **kwargs,\n        ^^^^^^^^^\n    )\n    ^\n  File \"C:\\Users\\heatsin\\Documents\\Codex\\2026-11-08\\devops-qa-backend-frontend-full-stack\\soup_source\\.venv\\Lib\\site-packages\\torch\\nn\\modules\\module.py\", line 1787, in _wrapped_call_impl\n    return self._call_impl(*args, **kwargs)\n           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\heatsin\\Documents\\Codex\\2026-11-08\\devops-qa-backend-frontend-full-stack\\soup_source\\.venv\\Lib\\site-packages\\torch\\nn\\modules\\module.py\", line 1798, in _call_impl\n    return forward_call(*args, **kwargs)\n  File \"C:\\Users\\heatsin\\Documents\\Codex\\2026-11-08\\devops-qa-backend-frontend-full-stack\\soup_source\\.venv\\Lib\\site-packages\\peft\\tuners\\tuners_utils.py\", line 359, in forward\n    return self.model(*args, **kwargs)\n           ~~~~~~~~~~^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\heatsin\\Documents\\Codex\\2026-11-08\\devops-qa-backend-frontend-full-stack\\soup_source\\.venv\\Lib\\site-packages\\torch\\nn\\modules\\module.py\", line 1787, in _wrapped_call_impl\n    return self._call_impl(*args, **kwargs)\n           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\heatsin\\Documents\\Codex\\2026-11-08\\devops-qa-backend-frontend-full-stack\\soup_source\\.venv\\Lib\\site-packages\\torch\\nn\\modules\\module.py\", line 1798, in _call_impl\n    return forward_call(*args, **kwargs)\n  File \"C:\\Users\\heatsin\\Documents\\Codex\\2026-11-08\\devops-qa-backend-frontend-full-stack\\soup_source\\.venv\\Lib\\site-packages\\transformers\\utils\\generic.py\", line 943, in wrapper\n    output = func(self, *args, **kwargs)\n  File \"C:\\Users\\heatsin\\Documents\\Codex\\2026-11-08\\devops-qa-backend-frontend-full-stack\\soup_source\\.venv\\Lib\\site-packages\\transformers\\models\\qwen2\\modeling_qwen2.py\", line 456, in forward\n    logits = self.lm_head(hidden_states)\n  File \"C:\\Users\\heatsin\\Documents\\Codex\\2026-11-08\\devops-qa-backend-frontend-full-stack\\soup_source\\.venv\\Lib\\site-packages\\torch\\nn\\modules\\module.py\", line 1787, in _wrapped_call_impl\n    return self._call_impl(*args, **kwargs)\n           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\heatsin\\Documents\\Codex\\2026-11-08\\devops-qa-backend-frontend-full-stack\\soup_source\\.venv\\Lib\\site-packages\\torch\\nn\\modules\\module.py\", line 1798, in _call_impl\n    return forward_call(*args, **kwargs)\n  File \"C:\\Users\\heatsin\\Documents\\Codex\\2026-11-08\\devops-qa-backend-frontend-full-stack\\soup_source\\.venv\\Lib\\site-packages\\torch\\nn\\modules\\linear.py\", line 134, in forward\n    return F.linear(input, self.weight, self.bias)\n           ~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\ntorch.OutOfMemoryError: CUDA out of memory. Tried to allocate 2.32 GiB. GPU 0 has a total capacity of 8.00 GiB of which 0 bytes is free. Including non-PyTorch memory, this process has 17179869184.00 GiB memory in use. Of the allocated memory 9.96 GiB is allocated by PyTorch, and 2.28 GiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://docs.pytorch.org/docs/stable/notes/cuda.html#optimizing-memory-usage-with-pytorch-cuda-alloc-conf)\n",
+  "versions": {
+    "accelerate": "1.15.0",
+    "bitsandbytes": "0.50.2",
+    "peft": "0.21.2",
+    "torch": "2.15.0+cu132",
+    "transformers": "5.22.2",
+    "trl": "0.29.1"
+  }
+}

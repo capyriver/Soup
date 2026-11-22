@@ -1,0 +1,57 @@
+{
+  "available_bytes": 7551844352,
+  "batch_size": 1,
+  "created_utc": "2026-11-19T03:33:37.342652+00:00",
+  "error": "CUDA out of memory. Tried to allocate 2.32 GiB. GPU 0 has a total capacity of 8.00 GiB of which 0 bytes is free. Including non-PyTorch memory, this process has 17179869184.00 GiB memory in use. Of the allocated memory 12.26 GiB is allocated by PyTorch, and 125.73 MiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://docs.pytorch.org/docs/stable/notes/cuda.html#optimizing-memory-usage-with-pytorch-cuda-alloc-conf)",
+  "error_type": "OutOfMemoryError",
+  "forward_shapes": [],
+  "hardware": {
+    "compute_capability": "8.6",
+    "driver_version": "616.56",
+    "name": "NVIDIA GeForce RTX 3050 Laptop GPU",
+    "torch_cuda": "13.2",
+    "total_vram_bytes": 8589410304
+  },
+  "main_commit": "7d3314549d1461b17615cc1df324660e6c2b67f6",
+  "measurement_free_bytes_before": null,
+  "measurement_total_bytes": null,
+  "measurement_tree": "223d4d507b102c97b5526869b956c453cddce467",
+  "mode": "step",
+  "model_id": "Qwen/Qwen2.5-0.5B-Instruct",
+  "model_path": "C:\\Users\\heatsin\\.cache\\huggingface\\hub\\models--Qwen--Qwen2.5-0.5B-Instruct\\snapshots\\7ae557604adf67be50417f59c2c2f167def9a775",
+  "model_revision": "7ae557604adf67be50417f59c2c2f167def9a775",
+  "nvidia_smi_errors": [],
+  "nvidia_smi_samples": [],
+  "predicted_bytes": 18334266208,
+  "probe_commit": "4d5ce353ef78979e07d289e2a0d0e591d184a3d6",
+  "probe_peak_bytes": null,
+  "probe_seconds": null,
+  "real_step_peak_bytes": null,
+  "realized_batch": {
+    "configured_batch_size": 1,
+    "fields": {
+      "chosen_input_ids": [
+        1,
+        4096
+      ],
+      "rejected_input_ids": [
+        1,
+        4096
+      ]
+    }
+  },
+  "reserved_peak_bytes": null,
+  "schema_version": 1,
+  "sequence_length": 4096,
+  "status": "oom",
+  "task": "orpo",
+  "traceback": "Traceback (most recent call last):\n  File \"C:\\Users\\heatsin\\Documents\\Codex\\2026-11-08\\devops-qa-backend-frontend-full-stack\\soup-2878-bench\\benchmarks\\measure_preference_vram_grid.py\", line 437, in _worker\n    trainer.train()\n    ~~~~~~~~~~~~~^^\n  File \"C:\\Users\\heatsin\\Documents\\Codex\\2026-11-08\\devops-qa-backend-frontend-full-stack\\soup_source\\.venv\\Lib\\site-packages\\transformers\\trainer.py\", line 1559, in train\n    return inner_training_loop(\n        args=args,\n    ...<2 lines>...\n        ignore_keys_for_eval=ignore_keys_for_eval,\n    )\n  File \"C:\\Users\\heatsin\\Documents\\Codex\\2026-11-08\\devops-qa-backend-frontend-full-stack\\soup_source\\.venv\\Lib\\site-packages\\transformers\\trainer.py\", line 1643, in _inner_training_loop\n    self._run_epoch(\n    ~~~~~~~~~~~~~~~^\n        model=model,\n        ^^^^^^^^^^^^\n    ...<9 lines>...\n        steps_trained_in_current_epoch=steps_trained_in_current_epoch,\n        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n    )\n    ^\n  File \"C:\\Users\\heatsin\\Documents\\Codex\\2026-11-08\\devops-qa-backend-frontend-full-stack\\soup_source\\.venv\\Lib\\site-packages\\transformers\\trainer.py\", line 1889, in _run_epoch\n    tr_loss_step = self.training_step(model, inputs, num_items_in_batch)\n  File \"C:\\Users\\heatsin\\Documents\\Codex\\2026-11-08\\devops-qa-backend-frontend-full-stack\\soup-2878-bench\\benchmarks\\measure_preference_vram_grid.py\", line 418, in capture_training_step\n    value = original_step(*args, **kwargs)\n  File \"C:\\Users\\heatsin\\Documents\\Codex\\2026-11-08\\devops-qa-backend-frontend-full-stack\\soup_source\\.venv\\Lib\\site-packages\\transformers\\trainer.py\", line 2098, in training_step\n    self.accelerator.backward(loss, **kwargs)\n    ~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\heatsin\\Documents\\Codex\\2026-11-08\\devops-qa-backend-frontend-full-stack\\soup_source\\.venv\\Lib\\site-packages\\accelerate\\accelerator.py\", line 2861, in backward\n    loss.backward(**kwargs)\n    ~~~~~~~~~~~~~^^^^^^^^^^\n  File \"C:\\Users\\heatsin\\Documents\\Codex\\2026-11-08\\devops-qa-backend-frontend-full-stack\\soup_source\\.venv\\Lib\\site-packages\\torch\\_tensor.py\", line 623, in backward\n    torch.autograd.backward(\n    ~~~~~~~~~~~~~~~~~~~~~~~^\n        self, gradient, retain_graph, create_graph, inputs=inputs\n        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n    )\n    ^\n  File \"C:\\Users\\heatsin\\Documents\\Codex\\2026-11-08\\devops-qa-backend-frontend-full-stack\\soup_source\\.venv\\Lib\\site-packages\\torch\\autograd\\__init__.py\", line 395, in backward\n    _engine_run_backward(\n    ~~~~~~~~~~~~~~~~~~~~^\n        tensors,\n        ^^^^^^^^\n    ...<5 lines>...\n        accumulate_grad=True,\n        ^^^^^^^^^^^^^^^^^^^^^\n    )\n    ^\n  File \"C:\\Users\\heatsin\\Documents\\Codex\\2026-11-08\\devops-qa-backend-frontend-full-stack\\soup_source\\.venv\\Lib\\site-packages\\torch\\autograd\\graph.py\", line 1113, in _engine_run_backward\n    return Variable._execution_engine.run_backward(  # Calls into the C++ engine to run the backward pass\n           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n        t_outputs, *args, **kwargs\n        ^^^^^^^^^^^^^^^^^^^^^^^^^^\n    )  # Calls into the C++ engine to run the backward pass\n    ^\ntorch.OutOfMemoryError: CUDA out of memory. Tried to allocate 2.32 GiB. GPU 0 has a total capacity of 8.00 GiB of which 0 bytes is free. Including non-PyTorch memory, this process has 17179869184.00 GiB memory in use. Of the allocated memory 12.26 GiB is allocated by PyTorch, and 125.73 MiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://docs.pytorch.org/docs/stable/notes/cuda.html#optimizing-memory-usage-with-pytorch-cuda-alloc-conf)\n",
+  "versions": {
+    "accelerate": "1.15.0",
+    "bitsandbytes": "0.50.2",
+    "peft": "0.21.2",
+    "torch": "2.15.0+cu132",
+    "transformers": "5.22.2",
+    "trl": "0.29.1"
+  }
+}

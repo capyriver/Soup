@@ -1,0 +1,213 @@
+{
+  "available_bytes": 7551844352,
+  "batch_size": 1,
+  "created_utc": "2026-11-19T03:35:21.903014+00:00",
+  "error": "a streaming step MEASURED 9.24 GB of VRAM at the configured shape but only 7.55 GB is free (the formula predicted 9.35 GB). Streaming bounds the WEIGHTS, not the activations or the logits \u2014 lower training.batch_size or data.max_length, both of which scale this. This run was measured, not estimated: it does not fit.",
+  "error_type": "ValueError",
+  "forward_shapes": [],
+  "hardware": {
+    "compute_capability": "8.6",
+    "driver_version": "616.56",
+    "name": "NVIDIA GeForce RTX 3050 Laptop GPU",
+    "torch_cuda": "13.2",
+    "total_vram_bytes": 8589410304
+  },
+  "main_commit": "7d3314549d1461b17615cc1df324660e6c2b67f6",
+  "measurement_free_bytes_before": 7182745600,
+  "measurement_total_bytes": 8589410304,
+  "measurement_tree": "223d4d507b102c97b5526869b956c453cddce467",
+  "mode": "probe",
+  "model_id": "Qwen/Qwen2.5-0.5B-Instruct",
+  "model_path": "C:\\Users\\heatsin\\.cache\\huggingface\\hub\\models--Qwen--Qwen2.5-0.5B-Instruct\\snapshots\\7ae557604adf67be50417f59c2c2f167def9a775",
+  "model_revision": "7ae557604adf67be50417f59c2c2f167def9a775",
+  "nvidia_smi_errors": [],
+  "nvidia_smi_samples": [
+    {
+      "memory_free_mib": 7618,
+      "memory_used_mib": 425,
+      "temperature_c": 52,
+      "timestamp": "2026/11/19 04:36:02.683",
+      "utilization_percent": 0
+    },
+    {
+      "memory_free_mib": 7598,
+      "memory_used_mib": 445,
+      "temperature_c": 52,
+      "timestamp": "2026/11/19 04:36:02.760",
+      "utilization_percent": 0
+    },
+    {
+      "memory_free_mib": 7354,
+      "memory_used_mib": 689,
+      "temperature_c": 50,
+      "timestamp": "2026/11/19 04:36:03.367",
+      "utilization_percent": 17
+    },
+    {
+      "memory_free_mib": 3716,
+      "memory_used_mib": 4327,
+      "temperature_c": 52,
+      "timestamp": "2026/11/19 04:36:03.987",
+      "utilization_percent": 100
+    },
+    {
+      "memory_free_mib": 316,
+      "memory_used_mib": 7727,
+      "temperature_c": 56,
+      "timestamp": "2026/11/19 04:36:04.628",
+      "utilization_percent": 11
+    },
+    {
+      "memory_free_mib": 24,
+      "memory_used_mib": 8019,
+      "temperature_c": 55,
+      "timestamp": "2026/11/19 04:36:05.400",
+      "utilization_percent": 0
+    },
+    {
+      "memory_free_mib": 24,
+      "memory_used_mib": 8019,
+      "temperature_c": 55,
+      "timestamp": "2026/11/19 04:36:06.146",
+      "utilization_percent": 100
+    },
+    {
+      "memory_free_mib": 24,
+      "memory_used_mib": 8019,
+      "temperature_c": 55,
+      "timestamp": "2026/11/19 04:36:06.791",
+      "utilization_percent": 1
+    },
+    {
+      "memory_free_mib": 24,
+      "memory_used_mib": 8019,
+      "temperature_c": 56,
+      "timestamp": "2026/11/19 04:36:07.465",
+      "utilization_percent": 100
+    },
+    {
+      "memory_free_mib": 24,
+      "memory_used_mib": 8019,
+      "temperature_c": 55,
+      "timestamp": "2026/11/19 04:36:08.109",
+      "utilization_percent": 0
+    },
+    {
+      "memory_free_mib": 24,
+      "memory_used_mib": 8019,
+      "temperature_c": 55,
+      "timestamp": "2026/11/19 04:36:08.812",
+      "utilization_percent": 0
+    },
+    {
+      "memory_free_mib": 24,
+      "memory_used_mib": 8019,
+      "temperature_c": 55,
+      "timestamp": "2026/11/19 04:36:09.473",
+      "utilization_percent": 0
+    },
+    {
+      "memory_free_mib": 24,
+      "memory_used_mib": 8019,
+      "temperature_c": 53,
+      "timestamp": "2026/11/19 04:36:10.145",
+      "utilization_percent": 100
+    },
+    {
+      "memory_free_mib": 24,
+      "memory_used_mib": 8019,
+      "temperature_c": 56,
+      "timestamp": "2026/11/19 04:36:10.777",
+      "utilization_percent": 100
+    },
+    {
+      "memory_free_mib": 24,
+      "memory_used_mib": 8019,
+      "temperature_c": 57,
+      "timestamp": "2026/11/19 04:36:11.409",
+      "utilization_percent": 100
+    },
+    {
+      "memory_free_mib": 24,
+      "memory_used_mib": 8019,
+      "temperature_c": 57,
+      "timestamp": "2026/11/19 04:36:12.029",
+      "utilization_percent": 100
+    },
+    {
+      "memory_free_mib": 24,
+      "memory_used_mib": 8019,
+      "temperature_c": 57,
+      "timestamp": "2026/11/19 04:36:12.629",
+      "utilization_percent": 100
+    },
+    {
+      "memory_free_mib": 24,
+      "memory_used_mib": 8019,
+      "temperature_c": 59,
+      "timestamp": "2026/11/19 04:36:13.216",
+      "utilization_percent": 100
+    },
+    {
+      "memory_free_mib": 24,
+      "memory_used_mib": 8019,
+      "temperature_c": 57,
+      "timestamp": "2026/11/19 04:36:13.853",
+      "utilization_percent": 100
+    },
+    {
+      "memory_free_mib": 24,
+      "memory_used_mib": 8019,
+      "temperature_c": 58,
+      "timestamp": "2026/11/19 04:36:14.468",
+      "utilization_percent": 100
+    },
+    {
+      "memory_free_mib": 22,
+      "memory_used_mib": 8021,
+      "temperature_c": 63,
+      "timestamp": "2026/11/19 04:36:15.082",
+      "utilization_percent": 100
+    },
+    {
+      "memory_free_mib": 7610,
+      "memory_used_mib": 433,
+      "temperature_c": 59,
+      "timestamp": "2026/11/19 04:36:15.714",
+      "utilization_percent": 0
+    },
+    {
+      "memory_free_mib": 7610,
+      "memory_used_mib": 433,
+      "temperature_c": 57,
+      "timestamp": "2026/11/19 04:36:16.360",
+      "utilization_percent": 0
+    }
+  ],
+  "predicted_bytes": 9351115616,
+  "probe_commit": "4d5ce353ef78979e07d289e2a0d0e591d184a3d6",
+  "probe_error": null,
+  "probe_failed": false,
+  "probe_oom": false,
+  "probe_peak_bytes": 9235222528,
+  "probe_seconds": 12.561616800000138,
+  "real_step_peak_bytes": null,
+  "realized_batch": {
+    "model_rows": 2,
+    "sequence_length": 2048
+  },
+  "reserved_peak_bytes": 14392754176,
+  "schema_version": 1,
+  "sequence_length": 2048,
+  "status": "failed",
+  "task": "simpo",
+  "traceback": "Traceback (most recent call last):\n  File \"C:\\Users\\heatsin\\Documents\\Codex\\2026-11-08\\devops-qa-backend-frontend-full-stack\\soup-2878-bench\\benchmarks\\measure_preference_vram_grid.py\", line 386, in _worker\n    wrapper.setup({\"train\": rows})\n    ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\heatsin\\Documents\\Codex\\2026-11-08\\devops-qa-backend-frontend-full-stack\\soup-1141-main-merge\\src\\soup_cli\\trainer\\simpo.py\", line 259, in setup\n    self._run_pending_stream_vram_probe()\n    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^\n  File \"C:\\Users\\heatsin\\Documents\\Codex\\2026-11-08\\devops-qa-backend-frontend-full-stack\\soup-1141-main-merge\\src\\soup_cli\\trainer\\stream_setup.py\", line 2531, in _run_pending_stream_vram_probe\n    self._finish_stream_vram_probe(peak, plan)\n    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^\n  File \"C:\\Users\\heatsin\\Documents\\Codex\\2026-11-08\\devops-qa-backend-frontend-full-stack\\soup-2878-bench\\benchmarks\\measure_preference_vram_grid.py\", line 381, in capture_finish\n    original_finish(peak, plan)\n    ~~~~~~~~~~~~~~~^^^^^^^^^^^^\n  File \"C:\\Users\\heatsin\\Documents\\Codex\\2026-11-08\\devops-qa-backend-frontend-full-stack\\soup-1141-main-merge\\src\\soup_cli\\trainer\\stream_setup.py\", line 2603, in _finish_stream_vram_probe\n    raise ValueError(fit.reason + plan.packed_arm_hint)\nValueError: a streaming step MEASURED 9.24 GB of VRAM at the configured shape but only 7.55 GB is free (the formula predicted 9.35 GB). Streaming bounds the WEIGHTS, not the activations or the logits \u2014 lower training.batch_size or data.max_length, both of which scale this. This run was measured, not estimated: it does not fit.\n",
+  "versions": {
+    "accelerate": "1.15.0",
+    "bitsandbytes": "0.50.2",
+    "peft": "0.21.2",
+    "torch": "2.15.0+cu132",
+    "transformers": "5.22.2",
+    "trl": "0.29.1"
+  }
+}

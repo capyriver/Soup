@@ -1,0 +1,222 @@
+{
+  "available_bytes": 7551844352,
+  "baseline_allocated_bytes": 335070720,
+  "baseline_reserved_bytes": 339738624,
+  "batch_size": 2,
+  "created_utc": "2026-11-19T03:40:09.251375+00:00",
+  "forward_shapes": [
+    [
+      2,
+      2048
+    ],
+    [
+      2,
+      2048
+    ]
+  ],
+  "hardware": {
+    "compute_capability": "8.6",
+    "driver_version": "616.56",
+    "name": "NVIDIA GeForce RTX 3050 Laptop GPU",
+    "torch_cuda": "13.2",
+    "total_vram_bytes": 8589410304
+  },
+  "main_commit": "7d3314549d1461b17615cc1df324660e6c2b67f6",
+  "measurement_free_bytes_before": 7182745600,
+  "measurement_total_bytes": 8589410304,
+  "measurement_tree": "223d4d507b102c97b5526869b956c453cddce467",
+  "mode": "step",
+  "model_id": "Qwen/Qwen2.5-0.5B-Instruct",
+  "model_path": "C:\\Users\\heatsin\\.cache\\huggingface\\hub\\models--Qwen--Qwen2.5-0.5B-Instruct\\snapshots\\7ae557604adf67be50417f59c2c2f167def9a775",
+  "model_revision": "7ae557604adf67be50417f59c2c2f167def9a775",
+  "nvidia_smi_errors": [],
+  "nvidia_smi_samples": [
+    {
+      "memory_free_mib": 7618,
+      "memory_used_mib": 425,
+      "temperature_c": 51,
+      "timestamp": "2026/11/19 04:40:42.970",
+      "utilization_percent": 0
+    },
+    {
+      "memory_free_mib": 7598,
+      "memory_used_mib": 445,
+      "temperature_c": 51,
+      "timestamp": "2026/11/19 04:40:43.081",
+      "utilization_percent": 0
+    },
+    {
+      "memory_free_mib": 7430,
+      "memory_used_mib": 613,
+      "temperature_c": 51,
+      "timestamp": "2026/11/19 04:40:43.695",
+      "utilization_percent": 37
+    },
+    {
+      "memory_free_mib": 3868,
+      "memory_used_mib": 4175,
+      "temperature_c": 56,
+      "timestamp": "2026/11/19 04:40:44.314",
+      "utilization_percent": 100
+    },
+    {
+      "memory_free_mib": 1494,
+      "memory_used_mib": 6549,
+      "temperature_c": 64,
+      "timestamp": "2026/11/19 04:40:44.900",
+      "utilization_percent": 67
+    },
+    {
+      "memory_free_mib": 50,
+      "memory_used_mib": 7993,
+      "temperature_c": 64,
+      "timestamp": "2026/11/19 04:40:45.484",
+      "utilization_percent": 26
+    },
+    {
+      "memory_free_mib": 44,
+      "memory_used_mib": 7999,
+      "temperature_c": 59,
+      "timestamp": "2026/11/19 04:40:46.065",
+      "utilization_percent": 100
+    },
+    {
+      "memory_free_mib": 44,
+      "memory_used_mib": 7999,
+      "temperature_c": 58,
+      "timestamp": "2026/11/19 04:40:46.661",
+      "utilization_percent": 100
+    },
+    {
+      "memory_free_mib": 44,
+      "memory_used_mib": 7999,
+      "temperature_c": 59,
+      "timestamp": "2026/11/19 04:40:47.252",
+      "utilization_percent": 100
+    },
+    {
+      "memory_free_mib": 44,
+      "memory_used_mib": 7999,
+      "temperature_c": 60,
+      "timestamp": "2026/11/19 04:40:47.855",
+      "utilization_percent": 100
+    },
+    {
+      "memory_free_mib": 44,
+      "memory_used_mib": 7999,
+      "temperature_c": 59,
+      "timestamp": "2026/11/19 04:40:48.441",
+      "utilization_percent": 100
+    },
+    {
+      "memory_free_mib": 44,
+      "memory_used_mib": 7999,
+      "temperature_c": 60,
+      "timestamp": "2026/11/19 04:40:49.016",
+      "utilization_percent": 100
+    },
+    {
+      "memory_free_mib": 44,
+      "memory_used_mib": 7999,
+      "temperature_c": 59,
+      "timestamp": "2026/11/19 04:40:49.618",
+      "utilization_percent": 100
+    },
+    {
+      "memory_free_mib": 44,
+      "memory_used_mib": 7999,
+      "temperature_c": 59,
+      "timestamp": "2026/11/19 04:40:50.237",
+      "utilization_percent": 100
+    },
+    {
+      "memory_free_mib": 36,
+      "memory_used_mib": 8007,
+      "temperature_c": 58,
+      "timestamp": "2026/11/19 04:40:50.838",
+      "utilization_percent": 100
+    },
+    {
+      "memory_free_mib": 36,
+      "memory_used_mib": 8007,
+      "temperature_c": 59,
+      "timestamp": "2026/11/19 04:40:51.454",
+      "utilization_percent": 100
+    },
+    {
+      "memory_free_mib": 36,
+      "memory_used_mib": 8007,
+      "temperature_c": 59,
+      "timestamp": "2026/11/19 04:40:52.077",
+      "utilization_percent": 100
+    },
+    {
+      "memory_free_mib": 36,
+      "memory_used_mib": 8007,
+      "temperature_c": 59,
+      "timestamp": "2026/11/19 04:40:52.676",
+      "utilization_percent": 100
+    },
+    {
+      "memory_free_mib": 36,
+      "memory_used_mib": 8007,
+      "temperature_c": 60,
+      "timestamp": "2026/11/19 04:40:53.276",
+      "utilization_percent": 100
+    },
+    {
+      "memory_free_mib": 36,
+      "memory_used_mib": 8007,
+      "temperature_c": 59,
+      "timestamp": "2026/11/19 04:40:53.881",
+      "utilization_percent": 100
+    },
+    {
+      "memory_free_mib": 36,
+      "memory_used_mib": 8007,
+      "temperature_c": 60,
+      "timestamp": "2026/11/19 04:40:54.495",
+      "utilization_percent": 100
+    },
+    {
+      "memory_free_mib": 32,
+      "memory_used_mib": 8011,
+      "temperature_c": 65,
+      "timestamp": "2026/11/19 04:40:55.081",
+      "utilization_percent": 100
+    }
+  ],
+  "predicted_bytes": 9351115616,
+  "probe_commit": "4d5ce353ef78979e07d289e2a0d0e591d184a3d6",
+  "probe_peak_bytes": null,
+  "probe_seconds": null,
+  "real_step_peak_bytes": 10485903872,
+  "real_step_seconds": 12.285189199999877,
+  "realized_batch": {
+    "configured_batch_size": 2,
+    "fields": {
+      "KL_completion_input_ids": [
+        2,
+        2048
+      ],
+      "completion_input_ids": [
+        2,
+        2048
+      ]
+    }
+  },
+  "reserved_peak_bytes": 11744051200,
+  "schema_version": 1,
+  "sequence_length": 2048,
+  "status": "success",
+  "task": "kto",
+  "verdict": "pending-paired-process-row",
+  "versions": {
+    "accelerate": "1.15.0",
+    "bitsandbytes": "0.50.2",
+    "peft": "0.21.2",
+    "torch": "2.15.0+cu132",
+    "transformers": "5.22.2",
+    "trl": "0.29.1"
+  }
+}

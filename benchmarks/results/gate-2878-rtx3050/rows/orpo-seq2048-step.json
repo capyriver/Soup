@@ -1,0 +1,241 @@
+{
+  "available_bytes": 7551844352,
+  "baseline_allocated_bytes": 334251520,
+  "baseline_reserved_bytes": 339738624,
+  "batch_size": 1,
+  "created_utc": "2026-11-19T03:31:27.968095+00:00",
+  "forward_shapes": [],
+  "hardware": {
+    "compute_capability": "8.6",
+    "driver_version": "616.56",
+    "name": "NVIDIA GeForce RTX 3050 Laptop GPU",
+    "torch_cuda": "13.2",
+    "total_vram_bytes": 8589410304
+  },
+  "main_commit": "7d3314549d1461b17615cc1df324660e6c2b67f6",
+  "measurement_free_bytes_before": 7182745600,
+  "measurement_total_bytes": 8589410304,
+  "measurement_tree": "223d4d507b102c97b5526869b956c453cddce467",
+  "mode": "step",
+  "model_id": "Qwen/Qwen2.5-0.5B-Instruct",
+  "model_path": "C:\\Users\\heatsin\\.cache\\huggingface\\hub\\models--Qwen--Qwen2.5-0.5B-Instruct\\snapshots\\7ae557604adf67be50417f59c2c2f167def9a775",
+  "model_revision": "7ae557604adf67be50417f59c2c2f167def9a775",
+  "nvidia_smi_errors": [],
+  "nvidia_smi_samples": [
+    {
+      "memory_free_mib": 7618,
+      "memory_used_mib": 425,
+      "temperature_c": 52,
+      "timestamp": "2026/11/19 04:32:02.676",
+      "utilization_percent": 0
+    },
+    {
+      "memory_free_mib": 7598,
+      "memory_used_mib": 445,
+      "temperature_c": 52,
+      "timestamp": "2026/11/19 04:32:02.793",
+      "utilization_percent": 0
+    },
+    {
+      "memory_free_mib": 7278,
+      "memory_used_mib": 765,
+      "temperature_c": 51,
+      "timestamp": "2026/11/19 04:32:03.392",
+      "utilization_percent": 100
+    },
+    {
+      "memory_free_mib": 3716,
+      "memory_used_mib": 4327,
+      "temperature_c": 60,
+      "timestamp": "2026/11/19 04:32:03.992",
+      "utilization_percent": 98
+    },
+    {
+      "memory_free_mib": 24,
+      "memory_used_mib": 8019,
+      "temperature_c": 58,
+      "timestamp": "2026/11/19 04:32:04.604",
+      "utilization_percent": 84
+    },
+    {
+      "memory_free_mib": 24,
+      "memory_used_mib": 8019,
+      "temperature_c": 56,
+      "timestamp": "2026/11/19 04:32:05.194",
+      "utilization_percent": 100
+    },
+    {
+      "memory_free_mib": 24,
+      "memory_used_mib": 8019,
+      "temperature_c": 55,
+      "timestamp": "2026/11/19 04:32:05.857",
+      "utilization_percent": 0
+    },
+    {
+      "memory_free_mib": 24,
+      "memory_used_mib": 8019,
+      "temperature_c": 55,
+      "timestamp": "2026/11/19 04:32:06.504",
+      "utilization_percent": 0
+    },
+    {
+      "memory_free_mib": 24,
+      "memory_used_mib": 8019,
+      "temperature_c": 54,
+      "timestamp": "2026/11/19 04:32:07.214",
+      "utilization_percent": 0
+    },
+    {
+      "memory_free_mib": 24,
+      "memory_used_mib": 8019,
+      "temperature_c": 52,
+      "timestamp": "2026/11/19 04:32:07.838",
+      "utilization_percent": 0
+    },
+    {
+      "memory_free_mib": 24,
+      "memory_used_mib": 8019,
+      "temperature_c": 56,
+      "timestamp": "2026/11/19 04:32:08.548",
+      "utilization_percent": 100
+    },
+    {
+      "memory_free_mib": 24,
+      "memory_used_mib": 8019,
+      "temperature_c": 55,
+      "timestamp": "2026/11/19 04:32:09.312",
+      "utilization_percent": 0
+    },
+    {
+      "memory_free_mib": 24,
+      "memory_used_mib": 8019,
+      "temperature_c": 55,
+      "timestamp": "2026/11/19 04:32:10.401",
+      "utilization_percent": 0
+    },
+    {
+      "memory_free_mib": 24,
+      "memory_used_mib": 8019,
+      "temperature_c": 51,
+      "timestamp": "2026/11/19 04:32:11.091",
+      "utilization_percent": 0
+    },
+    {
+      "memory_free_mib": 24,
+      "memory_used_mib": 8019,
+      "temperature_c": 50,
+      "timestamp": "2026/11/19 04:32:11.772",
+      "utilization_percent": 0
+    },
+    {
+      "memory_free_mib": 24,
+      "memory_used_mib": 8019,
+      "temperature_c": 50,
+      "timestamp": "2026/11/19 04:32:12.501",
+      "utilization_percent": 0
+    },
+    {
+      "memory_free_mib": 24,
+      "memory_used_mib": 8019,
+      "temperature_c": 51,
+      "timestamp": "2026/11/19 04:32:13.149",
+      "utilization_percent": 100
+    },
+    {
+      "memory_free_mib": 24,
+      "memory_used_mib": 8019,
+      "temperature_c": 55,
+      "timestamp": "2026/11/19 04:32:13.785",
+      "utilization_percent": 100
+    },
+    {
+      "memory_free_mib": 24,
+      "memory_used_mib": 8019,
+      "temperature_c": 56,
+      "timestamp": "2026/11/19 04:32:14.408",
+      "utilization_percent": 100
+    },
+    {
+      "memory_free_mib": 24,
+      "memory_used_mib": 8019,
+      "temperature_c": 57,
+      "timestamp": "2026/11/19 04:32:15.042",
+      "utilization_percent": 100
+    },
+    {
+      "memory_free_mib": 24,
+      "memory_used_mib": 8019,
+      "temperature_c": 57,
+      "timestamp": "2026/11/19 04:32:15.656",
+      "utilization_percent": 100
+    },
+    {
+      "memory_free_mib": 24,
+      "memory_used_mib": 8019,
+      "temperature_c": 57,
+      "timestamp": "2026/11/19 04:32:16.254",
+      "utilization_percent": 100
+    },
+    {
+      "memory_free_mib": 24,
+      "memory_used_mib": 8019,
+      "temperature_c": 59,
+      "timestamp": "2026/11/19 04:32:16.858",
+      "utilization_percent": 100
+    },
+    {
+      "memory_free_mib": 24,
+      "memory_used_mib": 8019,
+      "temperature_c": 58,
+      "timestamp": "2026/11/19 04:32:17.441",
+      "utilization_percent": 100
+    },
+    {
+      "memory_free_mib": 22,
+      "memory_used_mib": 8021,
+      "temperature_c": 58,
+      "timestamp": "2026/11/19 04:32:18.025",
+      "utilization_percent": 36
+    },
+    {
+      "memory_free_mib": 22,
+      "memory_used_mib": 8021,
+      "temperature_c": 62,
+      "timestamp": "2026/11/19 04:32:18.623",
+      "utilization_percent": 100
+    }
+  ],
+  "predicted_bytes": 9351115616,
+  "probe_commit": "4d5ce353ef78979e07d289e2a0d0e591d184a3d6",
+  "probe_peak_bytes": null,
+  "probe_seconds": null,
+  "real_step_peak_bytes": 9235337728,
+  "real_step_seconds": 16.193426499999987,
+  "realized_batch": {
+    "configured_batch_size": 1,
+    "fields": {
+      "chosen_input_ids": [
+        1,
+        2048
+      ],
+      "rejected_input_ids": [
+        1,
+        2048
+      ]
+    }
+  },
+  "reserved_peak_bytes": 14392754176,
+  "schema_version": 1,
+  "sequence_length": 2048,
+  "status": "success",
+  "task": "orpo",
+  "verdict": "pending-paired-process-row",
+  "versions": {
+    "accelerate": "1.15.0",
+    "bitsandbytes": "0.50.2",
+    "peft": "0.21.2",
+    "torch": "2.15.0+cu132",
+    "transformers": "5.22.2",
+    "trl": "0.29.1"
+  }
+}
