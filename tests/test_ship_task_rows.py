@@ -815,6 +815,19 @@ def test_the_file_is_found_through_the_pointer_of_a_verdict_or_of_evidence(tmp_p
     assert len(loaded.rows) == 3
 
 
+@pytest.mark.parametrize("key", ["task_win", "task"], ids=["verdict", "evidence"])
+def test_parent_json_with_utf8_bom_loads_the_same_rows_as_plain_json(tmp_path, key):
+    plain_dir = tmp_path / "plain"
+    bom_dir = tmp_path / "bom"
+    plain_dir.mkdir()
+    bom_dir.mkdir()
+    plain_path = Path(_write_pair(plain_dir, key=key))
+    bom_path = Path(_write_pair(bom_dir, key=key))
+    bom_path.write_bytes(b"\xef\xbb\xbf" + bom_path.read_bytes())
+
+    assert load_task_rows_for(str(bom_path)) == load_task_rows_for(str(plain_path))
+
+
 @pytest.mark.parametrize("key", ["task_win", "task"])
 @pytest.mark.parametrize("equal", [False, True], ids=["different", "equal"])
 @pytest.mark.parametrize("location", ["pointer", "count", "unused"])
