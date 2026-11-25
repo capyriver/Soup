@@ -90,7 +90,6 @@ from soup_cli.utils.loop_state import (
     merge_state,
     read_state,
     update_state,
-    write_state,
 )
 from soup_cli.utils.terminal import for_terminal, strip_control
 
@@ -524,12 +523,13 @@ def run_once(
     # The batch is consumed only by a DECIDED verdict: SHIP deployed, DON'T SHIP, or the terminal
     # deploy hold. A refused deploy retains the trained candidate and its data cursor while waiting.
     verdict_decided = str(gate_out.get("gate_verdict", "SKIPPED")) in ("OK", "MAJOR")
+    deploy_deferred = pending is not None and not shipped and bool(deploy_out.get("deferred"))
     deploy_refused = deploying and not shipped and bool(deploy_out.get("failed"))
     attempts_used = resumed_attempts + 1 if deploy_refused else 0
     retry_deploy = False
-    consumed = trained_run and verdict_decided
+    consumed = trained_run and verdict_decided and not deploy_deferred
     failure_note = None
-    failed_deploy = state.failed_deploy
+    failed_deploy = None
     if deploy_refused:
         reason = str(deploy_out.get("notes") or "deploy failed")
         failed_deploy = deploy_failure_after(
@@ -551,8 +551,6 @@ def run_once(
                 f"deploy held after {attempts_used} attempts: {reason}; run "
                 "soup loop resume to retry the saved candidate"
             )
-    elif shipped and pending is not None:
-        failed_deploy = None
     elif train_out.get("failed") and train_out.get("notes"):
         # The failure itself (exit code or signal name, log tail), not the notes that came before
         # it (quantization, max_length, paraphrases): last_failure keeps its first 500 characters.
@@ -607,6 +605,18 @@ def run_once(
         verify_log=_log_ref(gate_out.get("verify_log")),
         **_evidence(gate_out),
     )
+    if deploy_deferred:
+        # A missing endpoint is not a refused server call or a completed iteration. Preserve the
+        # saved candidate, its cursor and its retry schedule across polls and restarts.
+        reason = _idle_reason(str(deploy_out.get("notes") or "deploy waiting"))
+        state = _state_with(state, last_idle={"at": _utc_iso(), "reason": reason})
+        if pending_cost_error is not None:
+            state = _state_with(
+                state,
+                failed_stage=_failed_stage_after(state, pending_cost_error, None, train_out),
+                last_failure=pending_cost_error.text[:500],
+            )
+        return state, _noted(record, log), replace(decision, proceed=False, reason=reason)
     if stage_error is None and _is_idle_poll(
         pending, trained_run, train_out, deploying, deploy_refused, gate_out, rolled_back,
         canary_notes,
@@ -847,10 +857,16 @@ def _harvest_message(harvest_out: Mapping[str, object]) -> str:
 def _emit_train_end(
     events: StageEvents, train_out: Mapping[str, object], trained: bool
 ) -> None:
+    # How an sft recipe's ``quantization: auto`` was decided (and why, when it fell back to
+    # 4bit) is on the line a person watching reads, not only in the iteration record.
+    note = train_out.get("quantization_note")
+    decided = f"; {note}" if isinstance(note, str) and note else ""
     if trained:
-        events.emit("train", "end", message=f"trained {train_out.get('run_id')}")
+        events.emit("train", "end", message=f"trained {train_out.get('run_id')}{decided}")
     elif train_out.get("failed"):
-        events.emit("train", "error", error="train_failed", message="training failed")
+        events.emit(
+            "train", "error", error="train_failed", message=f"training failed{decided}"
+        )
     else:
         events.emit("train", "end", message="training skipped")
 
@@ -1125,8 +1141,10 @@ def _failed_stage_after(
 def _prior_deploy_failure(
     failed: Optional[Mapping[str, object]], pending: Optional[Mapping[str, object]], now: datetime
 ) -> Optional[Mapping[str, object]]:
-    """Seed retry history from pre-backoff pending state written by an older Soup version."""
-    if failed is not None or pending is None:
+    """Use retry history only for a saved candidate, including pre-backoff state."""
+    if pending is None:
+        return None
+    if failed is not None:
         return failed
     attempts = pending.get("attempts", 0)
     if isinstance(attempts, bool) or not isinstance(attempts, int) or attempts < 1:
@@ -1596,14 +1614,42 @@ def watch(config: WatchConfig) -> "tuple[LoopState, int]":
     # v0.71.4 #177 — chain Registry entries across iterations so the loop
     # forms a real lineage DAG (parent links to the prior iteration's entry).
     prev_registry_id: Optional[str] = None
+    state: Optional[LoopState] = None
     try:
-        state = read_state(config.state_path)
         # Only promote `stopped` → `running` automatically; `paused` must
         # survive a `soup loop watch` invocation so a SIGTERM + restart
         # cycle does not silently un-pause the daemon (code-review HIGH #2).
+        # #3041 — under the lock and onto the file's CURRENT contents, so a
+        # `soup loop pause` that lands in that millisecond is not overwritten
+        # from this stale copy.
+        state = update_state(
+            lambda current: (
+                current.with_status("running") if current.status == "stopped" else current
+            ),
+            config.state_path,
+        )
+    except TimeoutError as start_timeout:
+        # Transient (the state lock was held): run on without the promotion —
+        # the next cycle re-reads the file and the final write retries the
+        # status, exactly as a failed iteration save does. A missing or
+        # invalid `loop.yaml` is not transient: it raises as it did before
+        # the `update_state` start-up write (#3055), through the arm that
+        # restores the signal handlers first.
+        _LOG.warning("watch: the start-up status could not be written", exc_info=True)
+        try:
+            state = read_state(config.state_path)
+        except BaseException:
+            _restore_signal_handlers(previous_handlers)
+            raise
+        # A start-up lock-timeout on a still-`stopped` file must fail by
+        # name: the promotion never happened, so the first cycle would read
+        # `stopped`, leave the loop at once and report a finished watch
+        # (`iterations=0 status=stopped`, exit 0) for a start-up that never
+        # ran. `running`/`paused` files are genuinely transient — the next
+        # cycle re-reads the file and the final write retries the status.
         if state.status == "stopped":
-            state = state.with_status("running")
-            write_state(state, config.state_path)
+            _restore_signal_handlers(previous_handlers)
+            raise start_timeout
     except BaseException:
         _restore_signal_handlers(previous_handlers)
         raise
